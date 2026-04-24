@@ -16,17 +16,22 @@ body {
   position: absolute;
   top: 20px;
   left: 20px;
-  right: 20px;
   font-size: 14px;
 	line-height: 18px;
+  display: flex;
+  width: 100%;
 }
 
-/* Date stays left */
-#datetime {
-  position: absolute;
-  left: 0;
-}
+@media (max-width: 600px){
+  .top-bar {
+    justify-content: center;
+    left: 0;
+  }
 
+  #datetime {
+    position: static; 
+  }
+}
 
 @font-face {
     font-family: WTGaramono-Regular;
@@ -85,6 +90,14 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
+
+@media (max-width: 600px){
+  .top-bar{
+    text-align: center;
+  }
+}
+
+
 /* Footer */
 footer {
   position: absolute;
@@ -93,163 +106,8 @@ footer {
   right: 20px;
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 14px;
 }
-
-/* About panel */
-/* Wrap acts as hover zone */
-.about-wrap {
-  position: absolute;
-  left: 250px;
-
-}
-
-/* Button */
-.about {
-  cursor: pointer;
-  position: absolute;
-  left: 0px;
-
-}
-
-.about-content p {
-  margin-bottom: 0.5em;
-}
-
-/* Panel */
-.about-panel {
-  position: absolute;
-  top: 20px;
-  left: 0;
-   padding-right: 20px;
-
-  width: calc(100vw - 40px);
-  max-width: 1000px;
-  overflow-wrap: break-word;
-
-
-
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-/* Show on hover of entire wrap */
-
-
-
-
-.about-panel {
-  
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-
-
-.indent-a { margin-left: 20px; }
-.indent-b {
-  margin-left: 200px;
-  max-width: 60%;
-}
-
-
-
-
-
-
-/* Responsive tweak */
-@media (max-width: 768px) {
-  .about-panel {
-    left: 20px;
-    right: 20px;
-  }
-}
-
-
-
-
-
-@media (max-width: 1024px) {
-
-  /* PIN ABOUT BUTTON TOP RIGHT */
-  .about-wrap {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    left: auto;
-  }
-
-  .about {
-    position: relative;
-    left: 0;
-  }
-
-  /* PANEL BECOMES FULL VIEWPORT CONTENT */
-  .about-panel {
-    position: fixed;
-
-    top: 60px;
-    left: 20px;
-    right: 20px;
-
-    width: auto;
-    max-width: none;
-
-    opacity: 0;
-    pointer-events: none;
-
-    text-align: left;
-  }
-
-  .about-wrap.open .about-panel {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .about-content {
-    max-width: 100%;
-  }
-
-  .indent-b {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-content {
-    max-width: 100%;
-  }
-}
-
-
-@media (min-width: 601px) {
-  .about-wrap:hover .about-panel {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-
-@media (max-width: 600px) {
-
-  .about-panel {
-    position: fixed;
-    top: 80px;
-    left: 20px;
-    right: 20px;
-
-
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .about-wrap.open .about-panel {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-}
-
 
 
 
@@ -258,6 +116,7 @@ footer {
 @media (max-width: 600px) {
   footer {
     flex-direction: column;
+    text-align: center;
     gap: 4px;
   }
 }
