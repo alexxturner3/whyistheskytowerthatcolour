@@ -70,6 +70,10 @@ main p {
 }
 
 
+a {
+  text-decoration: none;
+}
+
 a:link, a:visited, a:hover, a:active {
   color: black;
 }
